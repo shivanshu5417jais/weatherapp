@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Weather</title>
+        <link rel="icon" href="/img/weather.png">
+        <link rel="stylesheet" href="/css/style.css">
+    <script>
+        function toggle(){
+                     var c1 = document.getElementById('c1');
+                     c1.style.display = 'block';
+        }
+  
+    </script>
+    </head>
+    
+    <body>
+        <div class="main-content">
+             {{>header}} 
+            <center> <p>Use this site to get the weather details!</p></center>
+             <form  action="" method="get">
+                 <input placeholder="Location">
+                 <button onclick="toggle()">Search</button>
+             </form>
+             <h5 id="err" style="display: none; margin-left:20%;"></h5>
+             
+                
+             <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 4</div>
+  <img src="/img/img1.jpg" style="width:100%">
+  <div class="text">WELCOME</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 4</div>
+  <img src="/img/img2.jpg" style="width:100%">
+  <div class="text">TO</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 4</div>
+  <img src="/img/img3.jpg" style="width:100%">
+  <div class="text">WEATHER APP</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 4</div>
+  <img src="/img/img4.jpg" style="width:100%">
+  <div class="text">AMAZING TO SEE YOU</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+<script>
+          var slideIndex = 0;
+showSlides();
+        function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+
+             </div>
+             <center><div id="c1" style="display: none"></center>
+             <div id="content" style="display: none">
+              <center><h3>Location</h3></center>
+              <div class="m-1">
+             <center><table id="message-1">
+             <tr>
+                 <td>Address </td>
+                 <td>:</td>
+                 <td id="address"></td>
+             </tr>
+              <tr>
+                 <td>State </td>
+                  <td>:</td>
+                 <td id="state"></td>
+             </tr>
+              <tr>
+                 <td>Country </td>
+                  <td>:</td>
+                 <td id="country"></td>
+             </tr>
+             
+             </table></center>
+             </div>
+             <center><h3>Forecast</h3></center>
+             <div class="m-2" >
+                
+            <ul id="message-2">
+             <li><h6 id="temp" >dsfsdfsdfds</h6></li>
+             <li> <h6 id="time" >dsfsdfsdf</h6></li>
+            <li><h6 id="sunrise" >mghjb</h6></li>
+              <li><h6 id="sunset" >sdfsd</h6></li>
+              <li><h6 id="clouds" >sdfsd</h6></li>
+              <li><h6 id="desc" >sdfsd</h6></li>
+           </ul>
+          
+             </div>
+             </div>
+             </div>
+        </div>
+      
+    
+       {{>footer}}
+        <script src="/js/app.js"></script>
+    </body>
+
+</html>
